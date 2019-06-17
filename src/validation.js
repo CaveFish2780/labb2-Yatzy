@@ -1,3 +1,5 @@
+import Store from './store'
+
 export function simpleValidation(value, sortedDices){
 
     let occurance = 0;
@@ -97,4 +99,16 @@ export function simpleValidation(value, sortedDices){
     let sum = 0;
     values.forEach(value => sum += value);
     return sum;
+  }
+
+  export function checkResults(){
+    let table = Store.getters.yatzyTable;
+    for(let i=0; i<table.length; i++){
+      if(!table[i].locked){
+        return;
+      }
+    }
+    alert("Game Over \nYou got " + Store.getters.totalScore + " points!")
+    store.commit('resetDices');
+    store.commit('resetGame');
   }

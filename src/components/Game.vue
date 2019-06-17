@@ -31,6 +31,7 @@ export default {
     methods:{
         roll(){
           this.$store.commit('rollDices');
+          
         }
     },
     }

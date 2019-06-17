@@ -51,7 +51,25 @@ export default new Vuex.Store({
 
   },
   mutations: {
-
+    displayValues(state) {
+      console.log('display')
+      var sorted = this.getters.sortedDiceValues;
+      var table = state.yatzyTable
+      for (let i=0; i<6; i++) {
+        console.log('for');
+        if (!table[i].locked) {
+          console.log('if');
+          table[i].value = simpleValidation(i+1, sorted);
+        }
+      }
+      table[6].value = this.getters.bonus;
+      table[7].value = this.getters.section1Score;
+      for(let i=8; i<17; i++){
+        let row = table[i];
+        row.value = (!row.locked ? row.validation(sorted): row.value);
+      }
+      table[17].value = this.getters.totalScore;
+    },
     add(state, index){
       var table = state.yatzyTable;
       var column = table[index];
