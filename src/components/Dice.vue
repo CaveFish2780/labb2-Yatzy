@@ -11,8 +11,8 @@ export default {
     name: 'dice',
     props: ['value', 'selected', 'index'],
     methods:{
-        selectDice(){
-
+        selectDice(index) {
+            this.$store.commit('selectDice', index);
         }
     }
     }

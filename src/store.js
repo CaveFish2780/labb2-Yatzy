@@ -13,7 +13,7 @@ import {
   checkChance
  } from './validation.js'
 
- 
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -67,8 +67,8 @@ export default new Vuex.Store({
     },
   },
   selectDice(state, index){
-    state.dices[index].selected = !state.dices[index].selected;
-  },
+      state.dices[index].selected = !state.dices[index].selected;
+    },
   lockValue(state, index) {
     console.log('locking value at index: ' + index)
     state.yatzyTable[index].locked = true
