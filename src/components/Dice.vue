@@ -8,7 +8,8 @@
 <script>
 export default {
     
-    name: 'dice'
+    name: 'dice',
+    props: ['value', 'selected', 'index'],
     methods:{
         selectDice(){
 
