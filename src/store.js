@@ -52,6 +52,15 @@ export default new Vuex.Store({
   },
   mutations: {
 
+    add(state, index){
+      var table = state.yatzyTable;
+      var column = table[index];
+      if (!column.locked){
+        if (state.count !== 0) {
+          column.locked = true;
+        }
+      }
+    },
     rollDices(state){
       const min = Math.ceil(1);
       const max = Math.floor(7)
@@ -65,26 +74,26 @@ export default new Vuex.Store({
         });
       }
     },
-  },
-  selectDice(state, index){
+    selectDice(state, index){
       state.dices[index].selected = !state.dices[index].selected;
     },
-  lockValue(state, index) {
-    console.log('locking value at index: ' + index)
-    state.yatzyTable[index].locked = true
-  },
-  resetDices(state){// resets after every round
+    lockValue(state, index) {
+      console.log('locking value at index: ' + index)
+      state.yatzyTable[index].locked = true
+    },
+    resetDices(state){// resets after every round
       
-    state.count = 0;
-    state.dices.forEach(dice => {
-      dice.selected = false;
-      dice.value = 0;
-    });
-    state.yatzyTable.forEach(row => {
-      if (!row.locked){
-        row.value = 0;
-      }
-    });
+      state.count = 0;
+      state.dices.forEach(dice => {
+        dice.selected = false;
+        dice.value = 0;
+      });
+      state.yatzyTable.forEach(row => {
+        if (!row.locked){
+          row.value = 0;
+        }
+      });
+    },
   },
   
   actions: {
