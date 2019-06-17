@@ -1,6 +1,19 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { 
+  simpleValidation,
+  checkPair,
+  checkTwoPair,
+  checkTriplets,
+  checkFours,
+  checkSLadder,
+  checkBLadder,
+  checkFullHouse,
+  checkYatzy,
+  checkChance
+ } from './validation.js'
 
+ 
 Vue.use(Vuex)
 
 export default new Vuex.Store({

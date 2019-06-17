@@ -6,6 +6,10 @@
             </div>
         </div>
         <div class="dice-div">
+            <Dice v-for="dice, index in this.$store.state.dices"
+                v-bind:value="dice.value"
+                v-bind:selected="dice.selected"
+                v-bind:index="index"/>
         </div> 
         <div>
             <button v-on:click="roll">Roll</button>

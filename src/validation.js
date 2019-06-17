@@ -21,7 +21,6 @@ export function simpleValidation(value, sortedDices){
   }
   
   export function checkTwoPair(values){
-    console.log('2pairs')
     for(let i=0; i<values.length-1;i++){
       if(values[i] === values[i+1]){
         var secondPairValue = checkPair(values.slice(i+2, 5))
