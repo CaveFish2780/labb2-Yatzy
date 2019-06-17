@@ -38,5 +38,67 @@ export default {
 </script>
 
 <style scoped>
+#yatzy-table {
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+  font-size: 5em;
+ 
+}
 
+#yatzy-table:hover {
+  cursor: pointer;
+}
+
+#value-table {
+  width: 7em;
+  float: left;
+  text-align: left;
+  color: rgb(35, 54, 87);
+}
+
+#value-table :nth-child(even){
+  background: rgb(247, 246, 245);
+}
+
+#value-table :nth-child(odd){
+  background: rgb(95, 173, 209);
+}
+
+#score-table {
+  float: left;
+  color: rgb(170, 104, 57);
+  width: 7em;
+
+}
+#score-table :nth-child(even) {
+  background: rgb(245, 244, 242);
+}
+
+#score-table :nth-child(odd) {
+  background: rgb(149, 167, 224);
+}
+#score-table :nth-child(7){
+  color: rgb(10, 4, 0);
+}
+
+#score-table :nth-child(8){
+  color: rgb(10, 4, 0);
+
+}
+
+#score-table :nth-child(18){
+  color: rgb(10, 4, 0);
+
+}
+
+.selected {
+  color: rgb(35, 54, 87);
+}
+
+.column-div:hover {
+  color: rgb(35, 54, 87);
+  cursor: pointer;
+  /* background: black; */
+}
 </style>

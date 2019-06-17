@@ -18,6 +18,6 @@ export default {
 
 <style scoped>
 #app {
-
+  background-color: rgb(100, 109, 231);
 }
 </style>

@@ -37,5 +37,46 @@ export default {
 </script>
 
 <style scoped>
+#main {
+  background:rgb(12, 20, 133);
+  text-align: center;
+  color: rgb(170, 104, 57);
+  padding: 0.5em;
+  font-size: 5px;
+  margin-bottom: 0.7em;
+}
+#main-table {
+  align-items: center;
+  text-align: center;
 
+}
+.dice-div {
+  
+  display: inline-block;
+}
+
+.dice {
+  align-content: center;
+  width: 25%;
+  height: 5%;
+  float: left;
+  margin: 1px;
+  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 200%;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 1, 3);
+
+
+}
+
+.selectedDice {
+  background: rgb(182, 182, 180);
+}
+
+.dice:hover {
+  cursor: pointer;
+}
 </style>
