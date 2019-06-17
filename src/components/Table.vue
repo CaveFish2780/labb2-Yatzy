@@ -21,8 +21,17 @@ export default {
     
     name: 'yatzyTable',
     methods:{
-        addValue(){
+        
+        addValue(index){
             
+            if(this.yatzyTable[index].locked === false){
+                
+                this.$store.commit('lockValue', index)
+                this.$store.commit('resetDices')
+                
+            }else{
+                console.log('locked!')
+            }
         }
     }
     }
