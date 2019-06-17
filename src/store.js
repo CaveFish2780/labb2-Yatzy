@@ -20,7 +20,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     
-    count: 0,
+    
+    count: 0, //counts how many times the dices are thrown
 
     yatzyTable: [    
     {name: 'Ones', value: 0, locked: false}, 
@@ -52,15 +53,12 @@ export default new Vuex.Store({
 
   },
   mutations: {
-    
+
     displayValues(state) {
-      console.log('display')
       var sorted = this.getters.sortedDiceValues;
       var table = state.yatzyTable
-      for (let i=0; i<6; i++) {
-        console.log('for');
+      for (let i=0; i<6; i++) {        
         if (!table[i].locked) {
-          console.log('if');
           table[i].value = simpleValidation(i+1, sorted);
         }
       }
@@ -98,11 +96,12 @@ export default new Vuex.Store({
     selectDice(state, index){
       state.dices[index].selected = !state.dices[index].selected;
     },
-    lockValue(state, index) {
+    lockValue(state, index) { //Locks a column so that no further value can be modified
       console.log('locking value at index: ' + index)
       state.yatzyTable[index].locked = true
     },
-    resetDices(state){
+    
+    resetDices(state){//resets dices after round or game is finished
       
       state.count = 0;
       state.dices.forEach(dice => {
@@ -115,7 +114,8 @@ export default new Vuex.Store({
         }
       });
     },
-    resetGame(state){
+
+    resetGame(state){//resets all values to 0 when all columns are
       state.count = 0;
       let table = state.yatzyTable
       table.forEach(row => {
