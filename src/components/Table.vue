@@ -9,7 +9,7 @@
         <div class="score-div"
           v-for="(obj, index) in this.$store.getters.yatzyTable"v-bind:index="index"
           v-model:value="obj.value"
-          v-on:click="addValue(index)">
+          v-on:click="lock(index)">
           {{ obj.value }}
         </div>
       </div>
@@ -28,10 +28,12 @@ export default {
     },
     methods:{
         
-        addValue(index){
+
+        lock(index){ //locks selected column
             
             if(this.yatzyTable[index].locked === false){
                 
+
                 this.$store.commit('lockValue', index)
                 this.$store.commit('resetDices')
                 

@@ -52,6 +52,7 @@ export default new Vuex.Store({
 
   },
   mutations: {
+    
     displayValues(state) {
       console.log('display')
       var sorted = this.getters.sortedDiceValues;

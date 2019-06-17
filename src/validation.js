@@ -108,7 +108,7 @@ export function simpleValidation(value, sortedDices){
         return;
       }
     }
+    alert("Game Over \nYou got " + Store.getters.totalScore + " points!")
     Store.commit('resetDices');
     Store.commit('resetGame');
-    alert("Game Over \nYou got " + Store.getters.totalScore + " points!")
   }

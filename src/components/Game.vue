@@ -29,7 +29,8 @@ export default {
         Dice,
   }, 
     methods:{
-        roll(){
+
+        roll(){ //rolls dices and displays values allowing for placing values in prefered column
           this.$store.commit('rollDices');
           this.$store.commit('displayValues');
 
