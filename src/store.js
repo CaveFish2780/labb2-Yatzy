@@ -101,7 +101,7 @@ export default new Vuex.Store({
       console.log('locking value at index: ' + index)
       state.yatzyTable[index].locked = true
     },
-    resetDices(state){// resets after every round
+    resetDices(state){
       
       state.count = 0;
       state.dices.forEach(dice => {
@@ -113,6 +113,17 @@ export default new Vuex.Store({
           row.value = 0;
         }
       });
+    },
+    resetGame(state){
+      state.count = 0;
+      let table = state.yatzyTable
+      table.forEach(row => {
+        row.value = 0;
+        row.locked = false;
+      });
+      table[6].locked = true;
+      table[7].locked = true;
+      table[17].locked = true;
     },
   },
   
