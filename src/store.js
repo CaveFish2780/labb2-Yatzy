@@ -10,7 +10,8 @@ import {
   checkBLadder,
   checkFullHouse,
   checkYatzy,
-  checkChance
+  checkChance,
+  checkResults
  } from './validation.js'
 
 
@@ -69,6 +70,7 @@ export default new Vuex.Store({
         row.value = (!row.locked ? row.validation(sorted): row.value);
       }
       table[17].value = this.getters.totalScore;
+      checkResults();
     },
     add(state, index){
       var table = state.yatzyTable;
@@ -136,6 +138,31 @@ export default new Vuex.Store({
     },
     sortedDiceValues(state, getters){
       return getters.diceValues.sort();
+    },
+    section1Score(state, getters){
+      let score = 0;
+      for(let i=0; i<6; i++){
+        if(getters.yatzyTable[i].locked === true){
+          score += getters.yatzyTable[i].value;
+        }
+      }
+      return score;
+    },
+    totalScore(state, getters){
+      let score = 0;
+      for(let i=8; i<17; i++){
+        if(getters.yatzyTable[i].locked === true){
+        score += getters.yatzyTable[i].value;
+        }
+      }
+      return score + getters.section1Score;
+    },
+
+    bonus(state, getters){
+      if(getters.section1Score >= 63){
+        return 50;
+      }
+      return 0;
     },
   }
 })
