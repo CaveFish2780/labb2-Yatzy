@@ -89,5 +89,16 @@ export default new Vuex.Store({
   
   actions: {
 
+  },
+  getters:{
+    yatzyTable(state){
+      return state.yatzyTable;
+    },
+    count(state) {
+      return state.count;
+    },
+    dices(state){
+      return state.dices;
+    },
   }
 })
