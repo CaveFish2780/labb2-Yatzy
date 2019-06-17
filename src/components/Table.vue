@@ -5,6 +5,14 @@
         {{ obj.name }}
         </div>
       </div>
+        <div id="score-table">
+        <div class="score-div"
+          v-for="(obj, index) in this.$store.getters.yatzyTable"v-bind:index="index"
+          v-model:value="obj.value"
+          v-on:click="addValue(index)">
+          {{ obj.value }}
+        </div>
+      </div>
       </div>
 </template>
 
