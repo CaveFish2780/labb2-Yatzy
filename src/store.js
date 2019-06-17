@@ -39,6 +39,19 @@ export default new Vuex.Store({
   },
   mutations: {
 
+    rollDices(state){
+      const min = Math.ceil(1);
+      const max = Math.floor(7)
+      
+      if(state.count++ < 3){
+        state.dices.forEach(dice => {
+
+          if(!dice.selected){
+            dice.value = Math.floor(Math.random() * (max - min) + min);
+          }
+        });
+      }
+    },
   },
   actions: {
 
