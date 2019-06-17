@@ -1,6 +1,15 @@
 <template>
-    <div>
-
+    <div id="main-table">
+        <div>
+            <div id="main">
+            <Table></Table>
+            </div>
+        </div>
+        <div class="dice-div">
+        </div> 
+        <div>
+            <button v-on:click="roll">Roll</button>
+        </div>       
     </div>
 </template>
 
@@ -17,7 +26,7 @@ export default {
   }, 
     methods:{
         roll(){
-            
+
         }
     },
     }
