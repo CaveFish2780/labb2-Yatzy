@@ -11,8 +11,8 @@
                 v-bind:selected="dice.selected"
                 v-bind:index="index"/>
         </div> 
-        <div>
-            <button v-on:click="roll">Roll</button>
+        <div class="rollDiv">
+            <button class="rollButton" v-on:click="roll">Roll</button>
         </div>       
     </div>
 </template>
@@ -44,14 +44,16 @@ export default {
   background:rgb(12, 20, 133);
   text-align: center;
   color: rgb(170, 104, 57);
-  padding: 0.5em;
+  padding-top: 2em;
   font-size: 5px;
-  margin-bottom: 0.7em;
+  margin-bottom: 1em;
+  
 }
 #main-table {
   align-items: center;
   text-align: center;
-
+  width: 100%;
+  height: 100%;
 }
 .dice-div {
   
@@ -61,9 +63,8 @@ export default {
 .dice {
   align-content: center;
   width: 25%;
-  height: 5%;
   float: left;
-  margin: 1px;
+  margin: 2px;
   vertical-align: middle;
   display: flex;
   justify-content: center;
@@ -82,4 +83,11 @@ export default {
 .dice:hover {
   cursor: pointer;
 }
+.rollDiv{
+    padding-bottom: 1%;
+}
+.rollButton{
+    font-size: 150%;
+}
+
 </style>

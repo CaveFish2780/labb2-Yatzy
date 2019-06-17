@@ -45,7 +45,7 @@ export default {
     }
 </script>
 
-<style scoped>
+<style>
 #yatzy-table {
   margin-left: auto;
   margin-right: auto;
@@ -59,9 +59,8 @@ export default {
 }
 
 #value-table {
-  width: 7em;
   float: left;
-  text-align: left;
+  text-align: center;
   color: rgb(35, 54, 87);
 }
 
@@ -76,7 +75,7 @@ export default {
 #score-table {
   float: left;
   color: rgb(170, 104, 57);
-  width: 7em;
+  
 
 }
 #score-table :nth-child(even) {
@@ -111,4 +110,6 @@ export default {
   cursor: pointer;
   /* background: black; */
 }
+
+
 </style>
