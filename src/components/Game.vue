@@ -16,7 +16,9 @@ export default {
         Dice,
   }, 
     methods:{
-
+        roll(){
+            
+        }
     },
     }
 </script>
