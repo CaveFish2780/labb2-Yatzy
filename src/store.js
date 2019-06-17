@@ -100,5 +100,15 @@ export default new Vuex.Store({
     dices(state){
       return state.dices;
     },
+    diceValues(state, getters){
+      var values = [];
+      getters.dices.forEach(dice =>{
+        values.push(dice.value);
+      });
+      return values;
+    },
+    sortedDiceValues(state, getters){
+      return getters.diceValues.sort();
+    },
   }
 })

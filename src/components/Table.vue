@@ -17,9 +17,15 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
-    
+
     name: 'yatzyTable',
+    props: ['value', 'selected', 'index'],
+    computed: {
+        ...mapState(['yatzyTable'])
+    },
     methods:{
         
         addValue(index){
@@ -78,6 +84,8 @@ export default {
 #score-table :nth-child(odd) {
   background: rgb(149, 167, 224);
 }
+
+
 #score-table :nth-child(7){
   color: rgb(10, 4, 0);
 }
