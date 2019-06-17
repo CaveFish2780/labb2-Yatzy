@@ -53,6 +53,27 @@ export default new Vuex.Store({
       }
     },
   },
+  selectDice(state, index){
+    state.dices[index].selected = !state.dices[index].selected;
+  },
+  lockValue(state, index) {
+    console.log('locking value at index: ' + index)
+    state.yatzyTable[index].locked = true
+  },
+  resetDices(state){// resets after every round
+      
+    state.count = 0;
+    state.dices.forEach(dice => {
+      dice.selected = false;
+      dice.value = 0;
+    });
+    state.yatzyTable.forEach(row => {
+      if (!row.locked){
+        row.value = 0;
+      }
+    });
+  },
+  
   actions: {
 
   }
