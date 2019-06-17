@@ -19,7 +19,12 @@
 <script>
 export default {
     
-    name: 'yatzyTable'
+    name: 'yatzyTable',
+    methods:{
+        addValue(){
+            
+        }
+    }
     }
 </script>
 
